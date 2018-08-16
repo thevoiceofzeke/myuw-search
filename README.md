@@ -30,7 +30,7 @@ Use the component's HTML tag wherever you want:
 
 ### Configurable properties via attributes
 
-**inputLabel (input-label)**: Text to use in the aria-label and placeholder of the search field
-**buttonLabel (button-label)**: Text to use for the aria-label of the search button
-**icon (icon)**: Text name of the material icon to use for the submit button ("search" by default)
+- **inputLabel (input-label)**: Text to use in the aria-label and placeholder of the search field
+- **buttonLabel (button-label)**: Text to use for the aria-label of the search button
+- **icon (icon)**: Text name of the material icon to use for the submit button ("search" by default)
 
