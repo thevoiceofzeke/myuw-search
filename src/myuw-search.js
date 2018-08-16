@@ -13,7 +13,9 @@ export class MyUWSearch extends HTMLElement {
 
     static get observedAttributes() {
         return [
-            
+            'input-label',
+            'button-label',
+            'icon'
         ];
     }
 
@@ -25,7 +27,6 @@ export class MyUWSearch extends HTMLElement {
         this[name] = newValue;
         // Update the component
         this.updateComponent(name, newValue);
-
     }
 
     /**
@@ -35,7 +36,26 @@ export class MyUWSearch extends HTMLElement {
     */
     connectedCallback() {
         // Get all attributes
-        // this['theme-name']      = this.getAttribute('theme-name');
+        this.icon           = this.getAttribute('icon') || 'search';
+        this.inputLabel     = this.getAttribute('input-label') || 'Search';
+        this.buttonLabel    = this.getAttribute('button-label') || 'Submit search';
+
+        // Get elements to update
+        this.$icon      = this.shadowRoot.querySelector('i#icon');
+        this.$input     = this.shadowRoot.querySelector('input#input');
+        this.$button    = this.shadowRoot.querySelector('button#submit');
+        
+        // Set icon and label values
+        this.$icon.innerText = this.icon;
+        this.$input.setAttribute('aria-label', this.inputLabel);
+        this.$input.setAttribute('placeholder', this.inputLabel);
+        this.$button.setAttribute('aria-label', this.buttonLabel);
+
+        // Add click event listener for submit button
+        
+        this.$button.addEventListener('click', e => {
+            this.submitSearch();
+        });
 
         this.updateComponent();
     }
@@ -51,6 +71,13 @@ export class MyUWSearch extends HTMLElement {
     *   Update the component state 
     */
     updateComponent() {
+        
+    }
+
+    /**
+     *  Submit search
+     */
+    submitSearch() {
         
     }
 }

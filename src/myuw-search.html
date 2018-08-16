@@ -1,12 +1,54 @@
 <style>
+    @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
     :host {
-        
+        display: flex;
+        flex: auto;
     }
 
     :host([hidden]) {
         display: none;
     }
+
+    #container {
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        padding: 0 18px;
+    }
+
+    #input {
+        display: flex;
+        flex: auto;
+        height: 40px;
+        padding: 0 8px;
+        font-size: 1rem;
+        overflow: hidden;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+
+    }
+
+    #submit {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border: none;
+        border-left: 1px solid #333;
+        color: #333;
+        background: #fff;
+        width: 56px;
+        font-size: 1.8rem;
+    }
+
+    #icon {
+        color: #333;
+    }
+    
 </style>
-<div id='myuw-search-container' class='myuw-search-container'>
-    <input type='text' placeholder="Search"/>
+<div id='container' class='myuw-search-container'>
+    <input id='input' name='myuw-search-input' aria-label='' type='text' placeholder=''/>
+    <button id='submit' aria-label=''>
+        <i id='icon' class='material-icons'></i>
+    </button>
 </div>
