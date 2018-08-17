@@ -41,6 +41,7 @@ export class MyUWSearch extends HTMLElement {
         this.buttonLabel    = this.getAttribute('button-label') || 'Submit search';
 
         // Get elements to update
+        this.$form      = this.shadowRoot.querySelector('form#form');
         this.$icon      = this.shadowRoot.querySelector('i#icon');
         this.$input     = this.shadowRoot.querySelector('input#input');
         this.$button    = this.shadowRoot.querySelector('button#submit');
@@ -55,10 +56,6 @@ export class MyUWSearch extends HTMLElement {
         
         this.$button.addEventListener('click', e => {
             this.submitSearch();
-
-            if(this.callback && typeof this.callback === 'function'){
-                this.callback( this.$input.value );
-            }
         });
 
         this.updateComponent();
@@ -82,7 +79,9 @@ export class MyUWSearch extends HTMLElement {
      *  Submit search
      */
     submitSearch() {
-        
+        if (this.callback && typeof this.callback === 'function') {
+            this.callback( this.$input.value );
+        }
     }
 }
 

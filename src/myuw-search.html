@@ -10,11 +10,12 @@
         display: none;
     }
 
-    #container {
+    #form {
         display: flex;
         flex: auto;
         flex-direction: row;
         padding: 0 18px;
+        margin: 0;
     }
 
     #input {
@@ -46,9 +47,9 @@
     }
     
 </style>
-<div id='container' class='myuw-search-container'>
+<form id='form' class='myuw-search-container' onsubmit='submitSearch()'>
     <input id='input' name='myuw-search-input' aria-label='' type='text' placeholder=''/>
-    <button id='submit' aria-label=''>
+    <button id='submit' aria-label='' type='submit'>
         <i id='icon' class='material-icons'></i>
     </button>
-</div>
+</form>
