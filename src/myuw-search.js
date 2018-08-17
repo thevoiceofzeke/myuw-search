@@ -79,6 +79,7 @@ export class MyUWSearch extends HTMLElement {
      *  Submit search
      */
     submitSearch(event) {
+        event.preventDefault();
         event.stopPropagation();
         if (this.callback && typeof this.callback === 'function') {
             this.callback( this.$input.value );
