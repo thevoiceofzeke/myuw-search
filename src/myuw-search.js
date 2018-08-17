@@ -55,7 +55,7 @@ export class MyUWSearch extends HTMLElement {
         // Add click event listener for submit button
         
         this.$button.addEventListener('click', e => {
-            this.submitSearch();
+            this.submitSearch(e);
         });
 
         this.updateComponent();
@@ -78,7 +78,8 @@ export class MyUWSearch extends HTMLElement {
     /**
      *  Submit search
      */
-    submitSearch() {
+    submitSearch(event) {
+        event.stopPropagation();
         if (this.callback && typeof this.callback === 'function') {
             this.callback( this.$input.value );
         }
