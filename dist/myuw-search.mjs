@@ -55,6 +55,10 @@ class MyUWSearch extends HTMLElement {
         
         this.$button.addEventListener('click', e => {
             this.submitSearch();
+
+            if(this.callback && typeof this.callback === 'function'){
+                this.callback( this.$input.value );
+            }
         });
 
         this.updateComponent();
