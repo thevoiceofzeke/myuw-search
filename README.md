@@ -9,6 +9,12 @@ Add the following import to your page's `<head>`:
 <script nomodule scr="https://unpkg.com/@myuw-web-components/myuw-search@^1"></script>
 ```
 
+**Important:** For responsive features to work properly, ensure your application includes the viewport meta tag:
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
 Use the component's HTML tag wherever you want:
 
 ```html
