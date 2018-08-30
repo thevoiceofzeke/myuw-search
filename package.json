@@ -1,13 +1,13 @@
 {
   "name": "@myuw-web-components/myuw-search",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A material search field made for use with MyUW web components",
   "module": "dist/myuw-search.min.mjs",
   "browser": "dist/myuw-search.min.js",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "serve": "live-server",
+    "serve": "live-server --port=4200",
     "start": "run-p watch serve",
     "prepare": "npm run build",
     "pages": "rm -rf demo && mkdir -p demo && cp -r dist demo/ && cp index.html demo/ && gh-pages -d demo --repo git@github.com:myuw-web-components/myuw-search.git",
