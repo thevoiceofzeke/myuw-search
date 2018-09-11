@@ -77,8 +77,6 @@ export class MyUWSearch extends HTMLElement {
                 }
             }
         });
-
-        this.updateComponent();
     }
 
     /**
@@ -91,8 +89,26 @@ export class MyUWSearch extends HTMLElement {
     /**
     *   Update the component state 
     */
-    updateComponent() {
-        
+    updateComponent(attribute, value) {
+        switch (attribute) {
+            case 'input-label':
+                if (this.$input) {
+                    this.$input.setAttribute('placeholder', value);    
+                }
+                break;
+            case 'button-label':
+                if (this.$button) {
+                    this.$button.setAttribute('aria-label', value);    
+                }
+                break;
+            case 'icon':
+                if (this.$icon) {
+                    this.$icon.innerText = value;
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     /**
