@@ -47,6 +47,11 @@ document.getElementById('search').callback = (value) => {
 - **buttonLabel (button-label)**: Text to use for the aria-label of the search button
 - **icon (icon)**: Text name of the material icon to use for the submit button ("search" by default)
 
+### Custom CSS properties
+
+- **--myuw-search-border**: Used to set the border color of the search component (to support themes with light background colors). Defaults to `none`.
+- **--myuw-app-bar-color**: Used by to set the color of the search button icon on small screens. Defaults to white. 
+
 ## Development and contribution
 
 To run the demo app locally and test the component, run the following commands:
