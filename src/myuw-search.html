@@ -1,7 +1,8 @@
 <style>
     @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 
-    :host {
+    :host,
+    myuw-search {
         display: flex;
         flex: auto;
         border: var(--myuw-search-border, none);
@@ -63,6 +64,10 @@
         color: #333;
     }
     @media (max-width: 600px) {
+        :host,
+        myuw-search {
+            border: none !important;
+        }
         #form {
             justify-content: flex-end;
             padding: 0;
@@ -84,7 +89,8 @@
         }
         #toggle {
             display: block;
-            background: transparent;
+            transition: opacity 0.2s cubic-bezier(.25, .8, .25, 1);
+            background: var(--myuw-bar-button-bg, transparent);
             border: none;
             margin: 0 0 0 6px;
             height: 40px;
@@ -98,7 +104,7 @@
 
         }
         #toggle:hover {
-            background: rgba(0,0,0,0.12);
+            opacity: 0.8;
         }
         #iconToggle {
             color: var(--myuw-app-bar-color, #fff);
@@ -110,6 +116,8 @@
             margin-left: 0;
             margin-right: 0;
             width: auto;
+            border: var(--myuw-search-border, none);
+            border-radius: 5px;
         }
         #form[expanded] #input {
             opacity: 1;
@@ -121,6 +129,11 @@
             position: absolute;
             right: 0;
             margin: 0 6px;
+            background: transparent;
+        }
+        #form[expanded] #toggle:hover {
+            background: rgba(0,0,0,0.12);
+            opacity: 1;
         }
         #form[expanded] #iconToggle {
             color: #000;
