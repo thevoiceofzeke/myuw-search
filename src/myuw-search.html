@@ -89,25 +89,36 @@
         }
         #toggle {
             display: block;
-            transition: opacity 0.2s cubic-bezier(.25, .8, .25, 1);
-            background: var(--myuw-primary-color, transparent);
+            transition: background 0.2s cubic-bezier(.25, .8, .25, 1);
+            background: transparent;
             border: none;
             margin: 0 0 0 6px;
-            height: 40px;
-            min-width: 0;
+            height: 42px;
+            width: 42px;
+            min-width: initial;
+            padding: 4px;
+            min-width: 42px;
             line-height: 24px;
-            padding: 8px;
-            width: 40px;
             border-radius: 50%;
             cursor: pointer;
             outline: none;
 
         }
         #toggle:hover {
-            opacity: 0.8;
+            background: var(--myuw-bar-button-hover, rgba(0,0,0,0.12));
         }
+        
         #iconToggle {
             color: var(--myuw-app-bar-color, #fff);
+            transition: background 0.2s cubic-bezier(.25, .8, .25, 1);
+            background: var(--myuw-bar-button-bg, transparent);
+            overflow: hidden;
+            position: relative;
+            height: 33px;
+            width: 33px;
+            line-height: 33px;
+            padding: 0;
+            margin: 0;
         }
         #form[expanded] {
             position: absolute;
@@ -116,7 +127,7 @@
             margin-left: 0;
             margin-right: 0;
             width: auto;
-            border: var(--myuw-search-border, none);
+            border: var(--myuw-search-border, 1px solid rgba(0,0,0,0.5));
             border-radius: 5px;
         }
         #form[expanded] #input {
