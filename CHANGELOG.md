@@ -1,5 +1,11 @@
 # myuw-search versions
 
+## 1.2.0
+
+### Added 
+
+* Responsive theming support
+
 ## 1.1.9
 
 ### Added
