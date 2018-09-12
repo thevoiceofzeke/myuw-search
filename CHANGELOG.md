@@ -1,6 +1,6 @@
 # myuw-search versions
 
-## 1.2.1
+## 1.2.2
 
 ### Added 
 
