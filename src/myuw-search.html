@@ -4,17 +4,22 @@
     :host {
         display: flex;
         flex: auto;
+        border: var(--myuw-search-border, none);
+        border-radius: 5px;
     }
 
     :host([hidden]) {
         display: none;
     }
 
+    myuw-search {
+        border: var(--myuw-search-border, none);
+    }
+
     #form {
         display: flex;
         flex: auto;
         flex-direction: row;
-        padding: 0 18px;
         margin: 0;
     }
 
@@ -35,13 +40,19 @@
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         border: none;
-        border-left: 1px solid #333;
+        border-left: 1px solid;
+        border-color: var(--myuw-search-border-color, rgba(0,0,0,0.5));
         color: #333;
         background: #fff;
         width: 56px;
         font-size: 1.8rem;
         margin: 0;
         cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    #submit:hover {
+        background-color: #ebeaea;
     }
 
     #toggle {
