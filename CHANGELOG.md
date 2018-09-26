@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.2.4
+
+* Added CSS variable to explicitly set mobile search bar origin position (sets the value of `right`).
+
 ## 1.2.3
 
 ### Added 
