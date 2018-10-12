@@ -117,9 +117,12 @@ export class MyUWSearch extends HTMLElement {
     submitSearch(event) {
         event.preventDefault();
         event.stopPropagation();
-        if (this.callback && typeof this.callback === 'function') {
-            this.callback( this.$input.value );
-        }
+        var customEvent = new CustomEvent('search', {
+            detail: {
+                value: this.$input.value
+            }
+        });
+        this.dispatchEvent(customEvent);
     }
 
     /**
