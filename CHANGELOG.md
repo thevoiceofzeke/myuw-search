@@ -1,5 +1,9 @@
 # myuw-search versions
 
+## 1.3.0
+
+* Added `myuw-search` CustomEvent that exposes the value in the search field when a search is submitted
+
 ## 1.2.4
 
 * Added CSS variable to explicitly set mobile search bar origin position (sets the value of `right`).
