@@ -124,7 +124,7 @@ export class MyUWSearch extends HTMLElement {
         }
 
         // Emitting a custom event:
-        var customEvent = new CustomEvent('search', {
+        var customEvent = new CustomEvent('myuw-search', {
             detail: {
                 value: this.$input.value
             }
