@@ -117,6 +117,13 @@ export class MyUWSearch extends HTMLElement {
     submitSearch(event) {
         event.preventDefault();
         event.stopPropagation();
+
+        // Using `callback` property:
+        if (this.callback && typeof this.callback === 'function') {
+            this.callback(this.$input.value);
+        }
+
+        // Emitting a custom event:
         var customEvent = new CustomEvent('search', {
             detail: {
                 value: this.$input.value
