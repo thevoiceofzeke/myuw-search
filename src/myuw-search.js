@@ -117,9 +117,20 @@ export class MyUWSearch extends HTMLElement {
     submitSearch(event) {
         event.preventDefault();
         event.stopPropagation();
+
+        // Using `callback` property:
         if (this.callback && typeof this.callback === 'function') {
-            this.callback( this.$input.value );
+            this.callback(this.$input.value);
         }
+
+        // Emitting a custom event:
+        var customEvent = new CustomEvent('myuw-search', {
+            bubbles: true,
+            detail: {
+                value: this.$input.value
+            }
+        });
+        this.dispatchEvent(customEvent);
     }
 
     /**
@@ -156,3 +167,24 @@ MyUWSearch.template = (function template(src) {
 })(tpl);
 
 window.customElements.define('myuw-search', MyUWSearch);
+
+/**
+ * Polyfill for supporting the CustomEvent constructor in IE9+
+ * From: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
+ */
+(function () {
+    if (typeof window.CustomEvent === 'function') {
+        return false;
+    }
+
+    function CustomEvent (event, params) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        var evt = document.createEvent( 'CustomEvent' );
+        evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+        return evt;
+    }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+})();

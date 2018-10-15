@@ -139,13 +139,14 @@
 
         <script>
             // Add a callback to the serach component
-            document.getElementById('search').callback = (value) => {
+            document.body.addEventListener('myuw-search', (event) => {
+                var value = event.detail.value;
                 var label = document.getElementById('searchLabel');
                 var searchValue = document.getElementById('searchValue');
                 
                 label.innerText = 'You searched for: ';
                 searchValue.innerText = '"' + value + '"';
-            }
+            }, false);
 
             function updateSearchBar() {
                 // Get all elements
