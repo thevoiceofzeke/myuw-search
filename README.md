@@ -25,20 +25,21 @@ Use the component's HTML tag wherever you want:
 </myuw-search>
 ```
 
-Create a callback function wherever you want in your code:
+Listen for the `myuw-search` CustomEvent and process the value how you like:
 
 ```js
 /* 
-    Target the search component
-    - This example assumes you have given the component an ID value (e.g. <myuw-search id="search">)-
-    - The "value" parameter is the String value from the search input field
+    1. Listen for myuw-search event
+    2. Get the event data from event.detail.value
+    3. Do what you want with the search term!
 */
-document.getElementById('search').callback = (value) => {
-    /*
-        Perform search logic here. For example:
-            - Pass the search value as a parameter to your app's search page
-    */
-}
+document.body.addEventListener('myuw-search', (event) => {
+  var valueFromSearchBar = event.detail.value // "detail" object is part of CustomEvent spec
+  /*
+    Perform search logic here. For example:
+      - Pass the search value as a parameter to your app's search page
+  */
+}, false );
 ```
 
 ### Configurable properties via attributes
